@@ -20,16 +20,21 @@ const Shop = () => {
   }, []);
   const handleAddToCart = (product) => {
     const newCart = [...cart, product];
-    setCart(newCart);
+    if (newCart.length > 4) {
+      alert("Ops! you can only add 4 items..");
+    } else {
+      setCart(newCart);
+    }
   };
 
   const handleChooseBtn = (product) => {
     let newCart = [...cart, product];
+    console.log(newCart);
     for (let i = 0; i < newCart.length; i++) {
-      // console.log(props);
-      if (i == Math.floor(Math.random() * 5 + 1)) {
-        newCart = [product];
-      }
+      console.log(i);
+      // if (i == Math.floor(Math.random() * 5 + 1)) {
+      //   newCart = [product];
+      // }
     }
     // newCart.map((product) => {
     //   if (product.id == Math.floor(Math.random() * 5 + 1)) {
