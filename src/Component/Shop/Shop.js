@@ -22,8 +22,12 @@ const Shop = () => {
   // this is for adding cart in cart section
   const handleAddToCart = (product) => {
     const newCart = [...cart, product];
+    const targetCart = newCart.filter((item) => item.id === product.id);
+
     if (newCart.length > 4) {
-      alert("Ops! you can only add 4 items..");
+      alert("Ops! You can only add 4 items..");
+    } else if (targetCart.length == 2) {
+      alert("Already added");
     } else {
       setCart(newCart);
     }
