@@ -28,25 +28,15 @@ const Shop = () => {
       setCart(newCart);
     }
   };
-  // const getRandomNumber = (min, max) => {
-  //   let stepOne = max - min + 1;
-  //   let stepTwo = Math.random() * stepOne;
-  //   let stepThree = Math.floor(stepTwo) + min;
-  //   return stepThree;
-  // };
+
+  // this is for choosing one item
   const handleChooseBtn = (product) => {
     const newCart = [...cart, product];
-    // console.log(newCart);
     const singleCart =
       newCart[Math.floor(Math.random() * (newCart.length - 1))];
-    // console.log(singleCart);
     const newItem = [singleCart];
-    // const index = getRandomNumber(0, newCart.length - 1);
-    // const g = newCart[(index, product)];
-    // setCart(g);
     setCart(newItem);
   };
-  // console.log(cart);
   // this is for choose again btn
   const handleChooseAgain = () => {
     setCart([]);
