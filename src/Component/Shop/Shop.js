@@ -41,9 +41,26 @@ const Shop = () => {
   const handleChooseAgain = () => {
     setCart([]);
   };
+
+  //this is for delete button
+  const handleDeleteBtn = (id) => {
+    const newCart = [...cart];
+    // console.log(newCart);
+
+    const rest = newCart.filter((item) => item.id !== id);
+    setCart(rest);
+    // console.log(rest);
+    // for (const cartId in newCart) {
+    //   if(cartId ===id){
+    //     newCart.p
+    //   }
+    // }
+    // console.log(id);
+  };
+
   return (
-    <div className="product-container text-center ">
-      <div className="card-container m-2 m-md-5 ">
+    <div className="product-container bg-light text-center ">
+      <div className="card-container  m-2 m-md-5 ">
         {products.map((product) => (
           <Card
             key={product.id}
@@ -52,11 +69,15 @@ const Shop = () => {
           ></Card>
         ))}
       </div>
-      <div className="cart-container">
+      <div className="cart-container bg-light">
         <h3 className="text-uppercase  text-danger my-4">Selected Item</h3>
         <div className="mx-3">
           {cart.map((item) => (
-            <Cart key={item.id} item={item}></Cart>
+            <Cart
+              key={item.id}
+              item={item}
+              handleDeleteBtn={handleDeleteBtn}
+            ></Cart>
           ))}
         </div>
         <button
@@ -68,7 +89,7 @@ const Shop = () => {
         <br></br>
         <button
           onClick={handleChooseAgain}
-          className="btn btn-warning mt-3 fw-bold"
+          className="btn btn-warning mt-3 mb-3 fw-bold"
         >
           Choose Again
           <FontAwesomeIcon className="ps-2" icon={faArrowRotateRight} />

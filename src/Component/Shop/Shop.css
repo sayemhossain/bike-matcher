@@ -12,6 +12,7 @@
   height: 100vh;
   position: sticky;
   top: 0;
+  box-shadow: -10px 0px 10px rgb(180, 176, 176);
 }
 @media screen and (max-width: 994px) {
   .product-container {

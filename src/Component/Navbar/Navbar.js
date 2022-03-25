@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg  navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg  navbar-dark py-3 bg-dark">
         <div className="container">
           <a className="navbar-brand fw-bold" href="#">
             Bike Matcher
