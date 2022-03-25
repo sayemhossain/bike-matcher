@@ -4,6 +4,11 @@ import { useState } from "react";
 import Card from "../Card/Card";
 import Cart from "../Cart/Cart";
 import "./Shop.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRotateRight,
+  faPersonArrowDownToLine,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -30,12 +35,20 @@ const Shop = () => {
         ))}
       </div>
       <div className="cart-container bg-secondary">
-        <h3 className="text-uppercase  my-4">Selected Item</h3>
-        <div className="mx-5">
+        <h3 className="text-uppercase   my-4">Selected Item</h3>
+        <div className="mx-3">
           {cart.map((item) => (
             <Cart key={item.id} item={item}></Cart>
           ))}
         </div>
+        <button className="btn btn-danger mt-3 fw-bold">
+          Choose one for me <FontAwesomeIcon icon={faPersonArrowDownToLine} />
+        </button>
+        <br></br>
+        <button className="btn btn-warning mt-3 fw-bold">
+          Choose Again
+          <FontAwesomeIcon className="ps-2" icon={faArrowRotateRight} />
+        </button>
       </div>
     </div>
   );
