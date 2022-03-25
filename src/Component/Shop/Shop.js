@@ -18,6 +18,8 @@ const Shop = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  // this is for adding cart in cart section
   const handleAddToCart = (product) => {
     const newCart = [...cart, product];
     if (newCart.length > 4) {
@@ -49,7 +51,7 @@ const Shop = () => {
     setCart([]);
   };
   return (
-    <div className="product-container bg-light">
+    <div className="product-container text-center bg-dark">
       <div className="card-container m-2 m-md-5 ">
         {products.map((product) => (
           <Card
@@ -59,8 +61,8 @@ const Shop = () => {
           ></Card>
         ))}
       </div>
-      <div className="cart-container bg-info">
-        <h3 className="text-uppercase   my-4">Selected Item</h3>
+      <div className="cart-container bg-dark">
+        <h3 className="text-uppercase  text-danger my-4">Selected Item</h3>
         <div className="mx-3">
           {cart.map((item) => (
             <Cart key={item.id} item={item}></Cart>
