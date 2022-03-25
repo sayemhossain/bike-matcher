@@ -28,30 +28,31 @@ const Shop = () => {
       setCart(newCart);
     }
   };
-
+  // const getRandomNumber = (min, max) => {
+  //   let stepOne = max - min + 1;
+  //   let stepTwo = Math.random() * stepOne;
+  //   let stepThree = Math.floor(stepTwo) + min;
+  //   return stepThree;
+  // };
   const handleChooseBtn = (product) => {
-    let newCart = [...cart, product];
-    console.log(newCart);
-    for (let i = 0; i < newCart.length; i++) {
-      console.log(i);
-      // if (i == Math.floor(Math.random() * 5 + 1)) {
-      //   newCart = [product];
-      // }
-    }
-    // newCart.map((product) => {
-    //   if (product.id == Math.floor(Math.random() * 5 + 1)) {
-    //     setCart(product);
-    //   }
-    // });
+    const newCart = [...cart, product];
+    // console.log(newCart);
+    const singleCart =
+      newCart[Math.floor(Math.random() * (newCart.length - 1))];
+    // console.log(singleCart);
+    const newItem = [singleCart];
+    // const index = getRandomNumber(0, newCart.length - 1);
+    // const g = newCart[(index, product)];
+    // setCart(g);
+    setCart(newItem);
   };
   // console.log(cart);
-
   // this is for choose again btn
   const handleChooseAgain = () => {
     setCart([]);
   };
   return (
-    <div className="product-container text-center bg-dark">
+    <div className="product-container text-center ">
       <div className="card-container m-2 m-md-5 ">
         {products.map((product) => (
           <Card
@@ -61,7 +62,7 @@ const Shop = () => {
           ></Card>
         ))}
       </div>
-      <div className="cart-container bg-dark">
+      <div className="cart-container">
         <h3 className="text-uppercase  text-danger my-4">Selected Item</h3>
         <div className="mx-3">
           {cart.map((item) => (
