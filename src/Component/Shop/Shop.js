@@ -45,17 +45,8 @@ const Shop = () => {
   //this is for delete button
   const handleDeleteBtn = (id) => {
     const newCart = [...cart];
-    // console.log(newCart);
-
     const rest = newCart.filter((item) => item.id !== id);
     setCart(rest);
-    // console.log(rest);
-    // for (const cartId in newCart) {
-    //   if(cartId ===id){
-    //     newCart.p
-    //   }
-    // }
-    // console.log(id);
   };
 
   return (
