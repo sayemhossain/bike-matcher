@@ -1,7 +1,7 @@
-/* .cart {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-} */
+.cart {
+  border: 1px solid black;
+  box-shadow: 10px 5px 10px rgb(124, 123, 123);
+}
 .cart img {
   height: 70px;
   width: 70px;

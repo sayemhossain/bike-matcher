@@ -5,7 +5,6 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = (props) => {
   const { img, name } = props.item;
-  console.log(props);
   return (
     <div>
       <div className="cart bg-light mt-3 rounded container">
@@ -14,7 +13,7 @@ const Cart = (props) => {
             <img src={img} alt="" />
           </div>
           <div className="col-lg-7 ps-1">
-            <p>{name}</p>
+            <p className="fw-bold">{name}</p>
           </div>
           <div className="col-lg-2">
             <FontAwesomeIcon icon={faTrashCan} />

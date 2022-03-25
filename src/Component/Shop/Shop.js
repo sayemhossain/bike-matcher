@@ -22,10 +22,30 @@ const Shop = () => {
     const newCart = [...cart, product];
     setCart(newCart);
   };
+
+  const handleChooseBtn = (product) => {
+    let newCart = [...cart, product];
+    for (let i = 0; i < newCart.length; i++) {
+      // console.log(props);
+      if (i == Math.floor(Math.random() * 5 + 1)) {
+        newCart = [product];
+      }
+    }
+    // newCart.map((product) => {
+    //   if (product.id == Math.floor(Math.random() * 5 + 1)) {
+    //     setCart(product);
+    //   }
+    // });
+  };
   // console.log(cart);
+
+  // this is for choose again btn
+  const handleChooseAgain = () => {
+    setCart([]);
+  };
   return (
     <div className="product-container bg-light">
-      <div className="card-container m-5 ">
+      <div className="card-container m-2 m-md-5 ">
         {products.map((product) => (
           <Card
             key={product.id}
@@ -34,18 +54,24 @@ const Shop = () => {
           ></Card>
         ))}
       </div>
-      <div className="cart-container bg-secondary">
+      <div className="cart-container bg-info">
         <h3 className="text-uppercase   my-4">Selected Item</h3>
         <div className="mx-3">
           {cart.map((item) => (
             <Cart key={item.id} item={item}></Cart>
           ))}
         </div>
-        <button className="btn btn-danger mt-3 fw-bold">
+        <button
+          onClick={handleChooseBtn}
+          className="btn btn-danger mt-3 fw-bold"
+        >
           Choose one for me <FontAwesomeIcon icon={faPersonArrowDownToLine} />
         </button>
         <br></br>
-        <button className="btn btn-warning mt-3 fw-bold">
+        <button
+          onClick={handleChooseAgain}
+          className="btn btn-warning mt-3 fw-bold"
+        >
           Choose Again
           <FontAwesomeIcon className="ps-2" icon={faArrowRotateRight} />
         </button>
