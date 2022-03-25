@@ -5,8 +5,8 @@ const Navbar = () => {
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="#">
-            Navbar
+          <a class="navbar-brand fw-bold" href="#">
+            Bike Matcher
           </a>
           <button
             class="navbar-toggler"

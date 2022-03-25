@@ -5,16 +5,13 @@ const Card = (props) => {
   const { name, img, price } = props.product;
   return (
     <div>
-      <div className="card">
-        <img src={img} alt="" />
-        <div className="card-body">
+      <div className="card bg-secondary rounded">
+        <img className="mx-auto" src={img} alt="" />
+        <div className="card-body bg-light">
           <h5 className="card-title">{name}</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
+          <h5 className="fw-bold text-danger mb-4">${price}</h5>
+          <a href="#" className="btn btn-success">
+            Add to Cart
           </a>
         </div>
       </div>
