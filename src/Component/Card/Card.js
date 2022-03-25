@@ -10,7 +10,13 @@ const Card = (props) => {
         <div className="card-body bg-light">
           <h5 className="card-title">{name}</h5>
           <h5 className="fw-bold text-danger mb-4">${price}</h5>
-          <a href="#" className="btn btn-success">
+          <a
+            href="#"
+            onClick={() => {
+              props.handleAddToCart(props.product);
+            }}
+            className="btn btn-success"
+          >
             Add to Cart
           </a>
         </div>
