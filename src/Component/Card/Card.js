@@ -11,7 +11,9 @@ const Card = (props) => {
         <img className="mx-auto" src={img} alt="" />
         <div className="card-body bg-light">
           <h5 className="card-title">{name}</h5>
-          <h5 className="fw-bold text-danger mb-4">${price}</h5>
+          <h6 className=" mb-4">
+            Price: <span className="text-danger fw-bold">${price}</span>
+          </h6>
           <a
             href="#"
             onClick={() => {

@@ -5,8 +5,8 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg  navbar-dark py-3 bg-dark">
         <div className="container">
-          <a className="navbar-brand fw-bold" href="#">
-            Bike Matcher
+          <a className="navbar-brand text-uppercase fw-bold" href="#">
+            <span className="text-warning">Bike</span> Matcher
           </a>
           <button
             className="navbar-toggler"
