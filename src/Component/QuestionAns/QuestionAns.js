@@ -8,14 +8,14 @@ const QuestionAns = () => {
       <h4 className="text-primary fw-bold">1. State vs Props</h4>
       <div className="row question-answer ">
         <div className="col-lg-6 state p-4">
-          <h3 className="text-center">State</h3>
+          <h3 className="text-center bg-secondary p-2">State</h3>
           <p>1. State are Mutable</p>
           <p>2. You can define states in the component itself</p>
           <p>3. The state is set and updated by the object</p>
           <p>4. State changes can be asynchronous</p>
         </div>
         <div className="col-lg-6 p-4">
-          <h3 className="text-center">Props</h3>
+          <h3 className="text-center bg-secondary p-2">Props</h3>
           <p>1. Props are immutable</p>
           <p>2. You can pass properties from parent component</p>
           <p>3. Determine the view upon creation and then they remain static</p>
@@ -23,8 +23,8 @@ const QuestionAns = () => {
         </div>
       </div>
       <div>
-        <h4 className="my-4 text-primary">2. How useState() works?</h4>
-        <p>
+        <h4 className="mt-5 text-primary">2. How useState() works?</h4>
+        <p className="px-3">
           As stated previously, useState enables you to add state to function
           components. Calling React.useState inside a function component
           generates a single piece of state associated with that component.

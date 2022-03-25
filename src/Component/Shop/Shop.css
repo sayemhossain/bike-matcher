@@ -13,12 +13,35 @@
   position: sticky;
   top: 0;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 994px) {
   .product-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    flex-direction: column;
   }
   .card-container {
+    order: 2;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cart-container {
+    order: 1;
+    position: static;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .product-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-container {
+    order: 2;
     grid-template-columns: repeat(1, 1fr);
+  }
+  .cart-container {
+    order: 1;
+    position: static;
+    height: auto;
+    margin-bottom: 20px;
   }
 }
